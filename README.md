@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Myntra Clone
+
+A full-stack Myntra clone built with Next.js 15, TypeScript, Tailwind CSS, NextAuth, and MongoDB (mocked for demo). This project demonstrates a modern e-commerce web app with authentication, cart, product listing, and responsive design.
+
+## Features
+- Modern responsive UI inspired by Myntra
+- Home page with hero section and featured products (mock data)
+- Local placeholder images for products (no external assets)
+- Login and authentication using NextAuth (credentials, JWT, mock user)
+- User profile page (view after login)
+- Cart page with summary (UI only, not persistent)
+- Accessible color contrast and clean layout
+- Navbar and footer on all pages
+
+## Tech Stack
+- [Next.js 15 (App Router)](https://nextjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [NextAuth.js](https://next-auth.js.org/)
+- [MongoDB (mocked for demo)](https://www.mongodb.com/)
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+- Node.js 18+
+- npm (comes with Node.js)
+- [ImageMagick](https://imagemagick.org/) (for generating placeholder images, already done in this repo)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Installation
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repo-url>
+   cd myntra-clone
+   ```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Set up environment variables:**
+   Create a `.env.local` file in the root with:
+   ```env
+   MONGODB_URI=mongodb://localhost:27017/myntra-clone
+   NEXTAUTH_SECRET=supersecretkey
+   ```
+   > For demo, MongoDB is not required unless you want to connect a real DB.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
+   The app will be available at [http://localhost:3000](http://localhost:3000) (or another port if 3000 is in use).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Demo Login
+- **Email:** `test@myntra.com`
+- **Password:** any (password check is skipped in demo)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Usage
+- Browse products on the home page
+- Click "Add to Cart" (UI only, not persistent)
+- Login to access your profile page
+- Cart summary is on the right of the cart page
 
-## Learn More
+## Folder Structure
+- `src/app/` - Main app directory (pages, API routes)
+- `public/placeholder/` - Local placeholder images for products
 
-To learn more about Next.js, take a look at the following resources:
+## Customization
+- To use real product data, connect the API to a real MongoDB database
+- To enable persistent cart, implement cart logic with state management or backend
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This project is for educational/demo purposes only and is not affiliated with Myntra.
