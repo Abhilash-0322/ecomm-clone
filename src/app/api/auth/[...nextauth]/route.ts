@@ -1,9 +1,5 @@
 import NextAuth, { SessionStrategy } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import { MongoClient } from 'mongodb';
-import { compare } from 'bcryptjs';
-
-const uri = process.env.MONGODB_URI || '';
 
 async function getUser(email: string) {
   // Placeholder: Replace with real DB lookup

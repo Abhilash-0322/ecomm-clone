@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 
 interface Product {
   id: number;
@@ -37,7 +38,7 @@ export default function HomePage() {
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 max-w-7xl mx-auto">
         {products.map(product => (
           <div key={product.id} className="bg-white rounded-xl shadow hover:shadow-lg p-3 flex flex-col items-center transition-all border border-gray-200">
-            <img src={product.image} alt={product.name} className="w-full h-48 object-cover rounded-lg mb-3 bg-gray-100" />
+            <Image src={product.image} alt={product.name} width={200} height={250} className="w-full h-48 object-cover rounded-lg mb-3 bg-gray-100" />
             <div className="w-full flex flex-col flex-1">
               <h2 className="text-base font-semibold mb-1 truncate text-gray-900" title={product.name}>{product.name}</h2>
               <div className="text-xs text-gray-700 mb-1">{product.brand} • {product.category}</div>
